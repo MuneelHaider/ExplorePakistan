@@ -9,10 +9,10 @@ export default function Footer() {
 
   return (
     <footer className="bg-gradient-to-b from-emerald-50 to-white border-t border-border">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 py-6 md:py-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 lg:gap-40 lg:ml-4 m-0">
           {/* Brand Section */}
-          <div className="space-y-4">
+          <div className="space-y-2 min-w-0">
             <Link href="/" className="flex items-center gap-2 group">
               <div className="w-10 h-10 relative transform group-hover:scale-110 transition-transform duration-300">
                 <Image
@@ -25,15 +25,15 @@ export default function Footer() {
               </div>
               <span className="font-bold text-xl text-foreground">Experience Pakistan</span>
             </Link>
-            <p className="text-sm text-foreground/70 leading-relaxed">
+            <p className="text-sm text-foreground/70 leading-relaxed break-words">
               Your gateway to authentic Pakistan travel experiences. Discover breathtaking destinations and connect with expert local guides.
             </p>
           </div>
 
           {/* Quick Links */}
-          <div>
-            <h3 className="font-semibold text-foreground mb-4 text-lg">Quick Links</h3>
-            <ul className="space-y-3">
+          <div className="min-w-0">
+            <h3 className="font-semibold text-foreground mb-2 text-lg">Quick Links</h3>
+            <ul className="space-y-2">
               <li>
                 <Link href="/" className="text-sm text-foreground/70 hover:text-primary transition-colors duration-300">
                   Home
@@ -63,9 +63,9 @@ export default function Footer() {
           </div>
 
           {/* Contact Information */}
-          <div>
-            <h3 className="font-semibold text-foreground mb-4 text-lg">Contact Us</h3>
-            <ul className="space-y-3">
+          <div className="min-w-0">
+            <h3 className="font-semibold text-foreground mb-2 text-lg">Contact Us</h3>
+            <ul className="space-y-2">
               <li className="flex items-start gap-3">
                 <MapPin className="text-primary mt-0.5 flex-shrink-0" size={18} />
                 <span className="text-sm text-foreground/70">
@@ -94,9 +94,9 @@ export default function Footer() {
           </div>
 
           {/* Additional Info */}
-          <div>
-            <h3 className="font-semibold text-foreground mb-4 text-lg">Explore</h3>
-            <ul className="space-y-3">
+          <div className="min-w-0">
+            <h3 className="font-semibold text-foreground mb-2 text-lg">Explore</h3>
+            <ul className="space-y-2">
               <li>
                 <Link href="/login" className="text-sm text-foreground/70 hover:text-primary transition-colors duration-300">
                   Login
@@ -112,15 +112,10 @@ export default function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="mt-12 pt-8 border-t border-border">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <p className="text-sm text-foreground/60 text-center md:text-left">
-              © {currentYear} Experience Pakistan. All rights reserved.
-            </p>
-            <p className="text-sm text-foreground/60 text-center md:text-right">
-              Made with ❤️ in Pakistan
-            </p>
-          </div>
+        <div className="mt-4 pt-3">
+          <p className="text-sm text-foreground/60 text-center">
+            © {currentYear} Experience Pakistan. All rights reserved.
+          </p>
         </div>
       </div>
     </footer>
