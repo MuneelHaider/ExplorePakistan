@@ -4,6 +4,7 @@ import type React from "react"
 
 import { useState, useEffect } from "react"
 import Link from "next/link"
+import Image from "next/image"
 import { useRouter, useSearchParams } from "next/navigation"
 import { Eye, EyeOff, Mail, Lock, User } from "lucide-react"
 
@@ -78,10 +79,16 @@ export default function SignupPage() {
           {/* Header */}
           <div className="text-center mb-8">
             <div className="inline-flex items-center gap-2 mb-6">
-              <div className="w-10 h-10 bg-gradient-to-br from-primary to-accent rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-lg">W</span>
+              <div className="w-10 h-10 relative">
+                <Image
+                  src="/logo.png"
+                  alt="Experience Pakistan Logo"
+                  fill
+                  className="object-contain rounded-lg"
+                  sizes="40px"
+                />
               </div>
-              <span className="text-2xl font-bold text-foreground">Wanderlust</span>
+              <span className="text-2xl font-bold text-foreground">Experience Pakistan</span>
             </div>
             <h1 className="text-4xl font-bold text-foreground mb-2">Create Account</h1>
             <p className="text-foreground/60">Join our community of travelers and guides</p>

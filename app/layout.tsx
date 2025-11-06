@@ -9,7 +9,7 @@ const _geist = Geist({ subsets: ["latin"] })
 const _geistMono = Geist_Mono({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "Wanderlust Pakistan - Explore the Beauty",
+  title: "Experience Pakistan Pakistan - Explore the Beauty",
   description: "Discover Pakistan's most beautiful tourist spots and connect with experienced tour guides",
   generator: "v0.app",
   viewport: {

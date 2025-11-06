@@ -35,7 +35,7 @@ export default function FeaturesSection() {
         <div
           className={`text-center mb-16 transition-all duration-700 ${inView ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}`}
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">Why Choose Wanderlust?</h2>
+          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">Why Choose Experience Pakistan?</h2>
           <p className="text-lg text-foreground/70 max-w-2xl mx-auto">
             Your gateway to authentic Pakistan travel experiences
           </p>
