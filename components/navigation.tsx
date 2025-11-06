@@ -21,6 +21,7 @@ export default function Navigation() {
     { label: "Where to Go", href: "/locations" },
     { label: "What to Do", href: "/activities" },
     { label: "Find Tour Guides", href: "/guides" },
+    { label: "About", href: "/about" },
   ]
 
   return (
