@@ -12,10 +12,10 @@ export default function HeroSection() {
   }, [])
 
   return (
-    <section className="relative w-full min-h-screen md:h-screen flex items-center justify-center overflow-hidden pt-16 md:pt-20">
+    <section className="relative w-full min-h-screen md:h-screen flex items-start justify-center overflow-hidden pt-24 md:pt-8">
       {/* Background with gradient overlay */}
       <div className="absolute inset-0 z-0">
-        <div className="absolute inset-0 bg-gradient-to-b from-emerald-50 via-white to-amber-50"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-emerald-50 via-white to-amber-50 "></div>
 
         {/* Animated gradient circles */}
         <div className="absolute top-20 left-10 w-72 h-72 md:w-96 md:h-96 bg-gradient-to-r from-primary/20 to-transparent rounded-full blur-3xl animate-pulse"></div>
@@ -26,7 +26,7 @@ export default function HeroSection() {
       </div>
 
       {/* Hero Content */}
-      <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center mt-8 md:mt-12">
         {/* Hero Image Background */}
         <div
           className={`mb-6 md:mb-8 transition-all duration-1000 transform ${isVisible ? "scale-100 opacity-100" : "scale-95 opacity-0"}`}
@@ -102,11 +102,11 @@ export default function HeroSection() {
       </div>
 
       {/* Scroll indicator */}
-      <div className="absolute bottom-4 md:bottom-8 left-1/2 transform -translate-x-1/2 z-10 animate-bounce">
+      {/* <div className="absolute bottom-4 md:bottom-8 left-1/2 transform -translate-x-1/2 z-10 animate-bounce">
         <svg className="w-5 h-5 md:w-6 md:h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
         </svg>
-      </div>
+      </div> */}
     </section>
   )
 }
