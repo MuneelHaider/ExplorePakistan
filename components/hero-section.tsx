@@ -12,7 +12,7 @@ export default function HeroSection() {
   }, [])
 
   return (
-    <section className="relative w-full min-h-screen md:h-screen flex items-start justify-center overflow-hidden pt-24 md:pt-8">
+    <section className="relative w-full min-h-screen flex items-start justify-center overflow-hidden pt-24 md:pt-8 pb-0 md:pb-4">
       {/* Background with gradient overlay */}
       <div className="absolute inset-0 z-0">
         <div className="absolute inset-0 bg-gradient-to-b from-emerald-50 via-white to-amber-50 "></div>
@@ -74,27 +74,27 @@ export default function HeroSection() {
                 />
               </div>
             </div>
-            <button className="px-6 md:px-8 py-2.5 md:py-3 bg-gradient-to-r from-primary to-accent text-white rounded-full font-semibold hover:shadow-lg transform hover:scale-105 transition-all duration-300 flex items-center justify-center gap-2 text-sm md:text-base">
+            <button className="w-full sm:w-auto sm:flex-none mt-2 px-6 md:px-8 py-2.5 md:py-3 bg-gradient-to-r from-primary to-accent text-white rounded-full font-semibold hover:shadow-lg transform hover:scale-105 transition-all duration-300 flex items-center justify-center gap-2 text-sm md:text-base max-w-[200px] mx-auto sm:max-w-none sm:mx-0">
               <Search size={18} />
-              <span className="hidden sm:inline">Search</span>
+              <span>Search</span>
             </button>
           </div>
         </div>
 
         {/* CTA Buttons */}
         <div
-          className={`flex flex-col sm:flex-row gap-3 md:gap-4 justify-center transition-all duration-1000 transform ${isVisible ? "translate-y-0 opacity-100" : "translate-y-4 opacity-0"}`}
+          className={`flex flex-col sm:flex-row gap-3 md:gap-4 justify-center mb-8 md:mb-10 transition-all duration-1000 transform ${isVisible ? "translate-y-0 opacity-100" : "translate-y-4 opacity-0"}`}
           style={{ transitionDelay: "600ms" }}
         >
           <Link
             href="/locations"
-            className="px-6 md:px-8 py-2.5 md:py-3 bg-primary text-white rounded-full font-semibold hover:shadow-lg transform hover:scale-105 transition-all duration-300 text-sm md:text-base"
+            className="w-full sm:w-auto px-6 md:px-8 py-2.5 md:py-3   rounded-full text-primary border-2 border-primary font-semibold hover:shadow-lg transform hover:scale-105 transition-all duration-300 text-sm md:text-base max-w-[200px] mx-auto sm:max-w-none sm:mx-0"
           >
             Explore Destinations
           </Link>
           <Link
             href="/guides"
-            className="px-6 md:px-8 py-2.5 md:py-3 border-2 border-primary text-primary rounded-full font-semibold hover:bg-primary/5 transform hover:scale-105 transition-all duration-300 text-sm md:text-base"
+            className="w-full sm:w-auto px-6 md:px-8 py-2.5 md:py-3 border-2 bg-primary text-white rounded-full font-semibold hover:bg-primary/5 transform hover:scale-105 transition-all duration-300 text-sm md:text-base max-w-[200px] mx-auto sm:max-w-none sm:mx-0"
           >
             Find Tour Guides
           </Link>
