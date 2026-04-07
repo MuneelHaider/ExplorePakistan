@@ -11,7 +11,7 @@ const topGuides = [
     specialty: "Mountain Expeditions",
     rating: 4.9,
     reviews: 156,
-    image: "/pakistani-tour-guide-professional-male.jpg",
+    image: "/SALAM/Concordia & K2 Base Camp, Gilgit Baltistan.jpg",
     bio: "Expert in K2 Base Camp and northern trekking",
   },
   {
@@ -20,7 +20,7 @@ const topGuides = [
     specialty: "Cultural Tours",
     rating: 4.8,
     reviews: 142,
-    image: "/pakistani-tour-guide-professional-female.jpg",
+    image: "/SALAM/Deewar Fort, Bahawalpur Punjab.jpg",
     bio: "Passionate about sharing Pakistan's rich heritage",
   },
   {
@@ -29,7 +29,7 @@ const topGuides = [
     specialty: "Adventure Sports",
     rating: 4.9,
     reviews: 178,
-    image: "/pakistani-adventure-guide-professional.jpg",
+    image: "/SALAM/Lansdowne Bridge Sukkur, Sindh.jpg",
     bio: "Thrilling desert safaris and water sports expert",
   },
   {
@@ -38,7 +38,7 @@ const topGuides = [
     specialty: "Valley Tours",
     rating: 4.7,
     reviews: 128,
-    image: "/pakistani-nature-guide-professional-woman.jpg",
+    image: "/SALAM/Hunza, Gilgit Baltistan.jpg",
     bio: "Hunza Valley and Kumrat specialist with local insights",
   },
 ]

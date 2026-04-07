@@ -24,7 +24,7 @@ const activities = [
     name: "Adventure Sports",
     description: "Experience adrenaline-pumping activities like rock climbing and rafting.",
     icon: "🧗",
-    locations: ["K2 Pakistan", "Hunza Valley", "Mahodand Lake"],
+    locations: ["Concordia & K2 Base Camp", "Hunza Valley", "Mahodand Lake"],
   },
   {
     id: 4,

@@ -1,5 +1,6 @@
  "use client"
 import { useState } from "react"
+import { AnimatePresence, motion } from "framer-motion"
 
 const destinationGuides = [
   {
@@ -83,9 +84,11 @@ export default function DestinationGuidePage() {
           Plan smarter with route highlights, best seasons, and trip focus areas for Pakistan's most popular destinations.
         </p>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 auto-rows-min">
+        <motion.div layout className="grid grid-cols-1 md:grid-cols-2 gap-6 auto-rows-min">
           {destinationGuides.map((guide) => (
-            <div
+            <motion.div
+              layout
+              transition={{ type: "spring", stiffness: 75, damping: 18, mass: 1.1 }}
               key={guide.name}
               className={`bg-white border border-border rounded-2xl p-6 shadow-sm transition-[box-shadow] duration-300 ${
                 openCard === guide.name ? "md:col-span-2" : ""
@@ -103,37 +106,44 @@ export default function DestinationGuidePage() {
                 View destination details
               </button>
 
-              <div
-                className={`overflow-hidden transition-[max-height,opacity] duration-500 ease-in-out ${
-                  openCard === guide.name ? "max-h-[900px] opacity-100" : "max-h-0 opacity-0"
-                }`}
-              >
-                <div className="mt-5 pt-5 border-t border-border">
-                  <img src={guide.image} alt={guide.name} className="w-full h-44 object-cover rounded-xl mb-4" />
-                  <div className="space-y-2 text-sm text-foreground/80">
-                    <p>
-                      <span className="font-semibold">Altitude:</span> {guide.details.altitude}
-                    </p>
-                    <p>
-                      <span className="font-semibold">Suggested Duration:</span> {guide.details.duration}
-                    </p>
-                    <p>
-                      <span className="font-semibold">Common Route:</span> {guide.details.route}
-                    </p>
-                  </div>
-                  <div className="mt-3">
-                    <p className="font-semibold text-foreground mb-2">Traveler Tips</p>
-                    <ul className="list-disc pl-5 space-y-1 text-sm text-foreground/75">
-                      {guide.details.travelTips.map((tip) => (
-                        <li key={tip}>{tip}</li>
-                      ))}
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
+              <AnimatePresence initial={false}>
+                {openCard === guide.name && (
+                  <motion.div
+                    key="details"
+                    initial={{ height: 0, opacity: 0 }}
+                    animate={{ height: "auto", opacity: 1 }}
+                    exit={{ height: 0, opacity: 0 }}
+                    transition={{ duration: 1, ease: [0.22, 1, 0.36, 1] }}
+                    className="overflow-hidden"
+                  >
+                    <div className="mt-5 pt-5 border-t border-border">
+                      <img src={guide.image} alt={guide.name} className="w-full h-44 object-cover rounded-xl mb-4" />
+                      <div className="space-y-2 text-sm text-foreground/80">
+                        <p>
+                          <span className="font-semibold">Altitude:</span> {guide.details.altitude}
+                        </p>
+                        <p>
+                          <span className="font-semibold">Suggested Duration:</span> {guide.details.duration}
+                        </p>
+                        <p>
+                          <span className="font-semibold">Common Route:</span> {guide.details.route}
+                        </p>
+                      </div>
+                      <div className="mt-3">
+                        <p className="font-semibold text-foreground mb-2">Traveler Tips</p>
+                        <ul className="list-disc pl-5 space-y-1 text-sm text-foreground/75">
+                          {guide.details.travelTips.map((tip) => (
+                            <li key={tip}>{tip}</li>
+                          ))}
+                        </ul>
+                      </div>
+                    </div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </main>
   )
