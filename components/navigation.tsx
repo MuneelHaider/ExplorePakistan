@@ -70,6 +70,7 @@ export default function Navigation() {
         { label: "What to Do", href: "/activities" },
         { label: "Tour Packages", href: "/tour-packages" },
         { label: "Tour Operators", href: "/tour-operators" },
+        { label: "Cultural Handicrafts", href: "/cultural-handicrafts" },
         { label: "Hotels & Transport", href: "/hotels-transport" },
         { label: "Find Tour Guides", href: "/guides" },
       ],
