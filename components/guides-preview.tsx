@@ -3,45 +3,9 @@
 import Link from "next/link"
 import { useInView } from "react-intersection-observer"
 import { Star, ArrowRight } from "lucide-react"
+import { guidesData } from "@/lib/guides-data"
 
-const topGuides = [
-  {
-    id: 1,
-    name: "Ahmed Khan",
-    specialty: "Mountain Expeditions",
-    rating: 4.9,
-    reviews: 156,
-    image: "/SALAM/Concordia & K2 Base Camp, Gilgit Baltistan.jpg",
-    bio: "Expert in K2 Base Camp and northern trekking",
-  },
-  {
-    id: 2,
-    name: "Zainab Hassan",
-    specialty: "Cultural Tours",
-    rating: 4.8,
-    reviews: 142,
-    image: "/SALAM/Deewar Fort, Bahawalpur Punjab.jpg",
-    bio: "Passionate about sharing Pakistan's rich heritage",
-  },
-  {
-    id: 3,
-    name: "Muhammad Ali",
-    specialty: "Adventure Sports",
-    rating: 4.9,
-    reviews: 178,
-    image: "/SALAM/Lansdowne Bridge Sukkur, Sindh.jpg",
-    bio: "Thrilling desert safaris and water sports expert",
-  },
-  {
-    id: 4,
-    name: "Saira Ahmed",
-    specialty: "Valley Tours",
-    rating: 4.7,
-    reviews: 128,
-    image: "/SALAM/Hunza, Gilgit Baltistan.jpg",
-    bio: "Hunza Valley and Kumrat specialist with local insights",
-  },
-]
+const topGuides = guidesData.slice(0, 4)
 
 export default function GuidesPreview() {
   const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.1 })

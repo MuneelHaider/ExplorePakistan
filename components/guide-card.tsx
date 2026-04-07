@@ -37,7 +37,7 @@ export default function GuideCard({ guide, index }: { guide: Guide; index: numbe
         {guide.verified && (
           <div className="absolute top-3 right-3 bg-green-500/90 text-white px-3 py-1 rounded-full flex items-center gap-1 text-xs font-semibold backdrop-blur-sm">
             <CheckCircle size={14} />
-            Verified
+            DTS Verified
           </div>
         )}
 

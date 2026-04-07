@@ -2,62 +2,11 @@
 
 import { useState } from "react"
 import { Star, MapPin, Users, Check, AlertCircle } from "lucide-react"
-
-const guides: Record<number, any> = {
-  1: {
-    name: "Ahmed Khan",
-    specialty: "Mountain Expeditions",
-    rating: 4.9,
-    reviews: 156,
-    bio: "Expert in K2 Base Camp hiking and mountaineering with 15+ years experience",
-    image: "/SALAM/Concordia & K2 Base Camp, Gilgit Baltistan.jpg",
-    locations: ["Concordia & K2 Base Camp", "Hunza Valley", "Fairy Meadows", "Kumrat Valley", "Mahodand Lake"],
-    languages: ["Urdu", "English", "Wakhi"],
-    experience: 15,
-    verified: true,
-    responseTime: "2 hours",
-    priceRange: "$50-100/day",
-    about:
-      "Ahmed Khan is a highly experienced mountaineer and trekking guide with 15 years in the industry. He has guided hundreds of trekkers across Pakistan's northern mountains, including multiple Concordia and K2 Base Camp expeditions. His passion for the mountains is evident in his thorough preparation and attention to safety.",
-    specialties: [
-      "High-altitude trekking",
-      "Mountaineering",
-      "Rock climbing",
-      "Winter expeditions",
-      "Photography tours",
-    ],
-    contact: {
-      phone: "+92 (300) 1234567",
-      email: "ahmed@wanderlust.pk",
-      whatsapp: "+92 (300) 1234567",
-    },
-    availability: "Available Mon-Sun",
-    reviews_list: [
-      {
-        reviewer: "John Doe",
-        rating: 5,
-        text: "Ahmed was fantastic! His knowledge of the mountains is incredible.",
-        date: "2024-01-15",
-      },
-      {
-        reviewer: "Sarah Smith",
-        rating: 5,
-        text: "Professional, safe, and incredibly knowledgeable. Highly recommended!",
-        date: "2024-01-10",
-      },
-      {
-        reviewer: "Mike Wilson",
-        rating: 4,
-        text: "Great guide, very experienced. Would definitely use again.",
-        date: "2024-01-05",
-      },
-    ],
-  },
-}
+import { guidesData } from "@/lib/guides-data"
 
 export default function GuideDetailPage({ params }: { params: { id: string } }) {
   const guideId = Number.parseInt(params.id)
-  const guide = guides[guideId] || guides[1]
+  const guide = guidesData.find((g) => g.id === guideId) || guidesData[0]
   const [contactMethod, setContactMethod] = useState<"phone" | "email" | "whatsapp">("whatsapp")
 
   return (
@@ -131,6 +80,18 @@ export default function GuideDetailPage({ params }: { params: { id: string } }) 
                 {guide.specialties.map((spec: string) => (
                   <span key={spec} className="px-4 py-2 bg-primary/10 text-primary rounded-full font-semibold">
                     {spec}
+                  </span>
+                ))}
+              </div>
+            </div>
+
+            {/* Services */}
+            <div className="mb-12">
+              <h3 className="text-2xl font-bold text-foreground mb-6">Services</h3>
+              <div className="flex flex-wrap gap-3">
+                {guide.services.map((service: string) => (
+                  <span key={service} className="px-4 py-2 bg-emerald-100 text-emerald-700 rounded-full font-semibold">
+                    {service}
                   </span>
                 ))}
               </div>
