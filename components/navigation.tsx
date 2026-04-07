@@ -35,14 +35,14 @@ export default function Navigation() {
           <Link href="/" className="flex items-center gap-2 group">
             <div className="w-8 h-8 relative transform group-hover:scale-110 transition-transform duration-300">
               <Image
-                src="/logo.png"
-                alt="Experience Pakistan Logo"
+                src="/logo-visitpakistan.jpeg"
+                alt="Visit Pakistan Logo"
                 fill
                 className="object-contain rounded-lg"
                 sizes="32px"
               />
             </div>
-            <span className="font-bold text-lg md:text-xl text-foreground hidden sm:block">Experience Pakistan</span>
+            <span className="font-bold text-lg md:text-xl text-foreground hidden sm:block">Visit Pakistan</span>
           </Link>
 
           {/* Desktop Navigation */}

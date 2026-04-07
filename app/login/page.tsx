@@ -38,14 +38,14 @@ export default function LoginPage() {
             <div className="inline-flex items-center gap-2 mb-6">
               <div className="w-10 h-10 relative">
                 <Image
-                  src="/logo.png"
-                  alt="Experience Pakistan Logo"
+                  src="/logo-visitpakistan.jpeg"
+                  alt="Visit Pakistan Logo"
                   fill
                   className="object-contain rounded-lg"
                   sizes="40px"
                 />
               </div>
-              <span className="text-2xl font-bold text-foreground">Experience Pakistan</span>
+              <span className="text-2xl font-bold text-foreground">Visit Pakistan</span>
             </div>
             <h1 className="text-4xl font-bold text-foreground mb-2">Welcome Back</h1>
             <p className="text-foreground/60">Sign in to explore Pakistan's beauty</p>
@@ -126,7 +126,7 @@ export default function LoginPage() {
                 <div className="w-full border-t border-border"></div>
               </div>
               <div className="relative flex justify-center text-sm">
-                <span className="px-2 bg-white text-foreground/60">New to Experience Pakistan?</span>
+                <span className="px-2 bg-white text-foreground/60">New to Visit Pakistan?</span>
               </div>
             </div>
 

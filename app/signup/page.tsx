@@ -81,14 +81,14 @@ export default function SignupPage() {
             <div className="inline-flex items-center gap-2 mb-6">
               <div className="w-10 h-10 relative">
                 <Image
-                  src="/logo.png"
-                  alt="Experience Pakistan Logo"
+                  src="/logo-visitpakistan.jpeg"
+                  alt="Visit Pakistan Logo"
                   fill
                   className="object-contain rounded-lg"
                   sizes="40px"
                 />
               </div>
-              <span className="text-2xl font-bold text-foreground">Experience Pakistan</span>
+              <span className="text-2xl font-bold text-foreground">Visit Pakistan</span>
             </div>
             <h1 className="text-4xl font-bold text-foreground mb-2">Create Account</h1>
             <p className="text-foreground/60">Join our community of travelers and guides</p>

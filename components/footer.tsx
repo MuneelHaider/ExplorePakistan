@@ -16,14 +16,14 @@ export default function Footer() {
             <Link href="/" className="flex items-center gap-2 group">
               <div className="w-10 h-10 relative transform group-hover:scale-110 transition-transform duration-300">
                 <Image
-                  src="/logo.png"
-                  alt="Experience Pakistan Logo"
+                  src="/logo-visitpakistan.jpeg"
+                  alt="Visit Pakistan Logo"
                   fill
                   className="object-contain rounded-lg"
                   sizes="40px"
                 />
               </div>
-              <span className="font-bold text-xl text-foreground">Experience Pakistan</span>
+              <span className="font-bold text-xl text-foreground">Visit Pakistan</span>
             </Link>
             <p className="text-sm text-foreground/70 leading-relaxed break-words">
               Your gateway to authentic Pakistan travel experiences. Discover breathtaking destinations and connect with expert local guides.
@@ -114,7 +114,7 @@ export default function Footer() {
         {/* Bottom Bar */}
         <div className="mt-4 pt-3">
           <p className="text-sm text-foreground/60 text-center">
-            © {currentYear} Experience Pakistan. All rights reserved.
+            © {currentYear} Visit Pakistan. All rights reserved.
           </p>
         </div>
       </div>
