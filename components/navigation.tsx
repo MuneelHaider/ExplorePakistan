@@ -3,7 +3,7 @@
 import Link from "next/link"
 import Image from "next/image"
 import { useState, useEffect } from "react"
-import { Menu, X } from "lucide-react"
+import { Menu, X, ChevronDown } from "lucide-react"
 
 export default function Navigation() {
   const [isOpen, setIsOpen] = useState(false)
@@ -17,12 +17,32 @@ export default function Navigation() {
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
 
-  const navLinks = [
-    { label: "Home", href: "/" },
-    { label: "Where to Go", href: "/locations" },
-    { label: "What to Do", href: "/activities" },
-    { label: "Find Tour Guides", href: "/guides" },
-    { label: "About", href: "/about" },
+  const navGroups = [
+    {
+      label: "Pakistan",
+      items: [
+        { label: "Explore Destinations", href: "/locations" },
+        { label: "Destination Guide", href: "/destination-guide" },
+        { label: "Interactive Map", href: "/interactive-map" },
+      ],
+    },
+    {
+      label: "Experiences",
+      items: [
+        { label: "What to Do", href: "/activities" },
+        { label: "Tour Packages", href: "/tour-packages" },
+        { label: "Hotels & Transport", href: "/hotels-transport" },
+        { label: "Find Tour Guides", href: "/guides" },
+      ],
+    },
+    {
+      label: "Support",
+      items: [
+        { label: "Feedback & Complaints", href: "/feedback-complaints" },
+        { label: "Emergency Help", href: "/emergency-help" },
+      ],
+    },
+    { label: "About", items: [{ label: "About Visit Pakistan", href: "/about" }] },
   ]
 
   return (
@@ -45,18 +65,31 @@ export default function Navigation() {
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex gap-4 lg:gap-8">
-            {navLinks.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className={`text-foreground hover:text-primary font-medium transition-colors duration-300 relative group text-sm lg:text-base px-4 py-1.5 rounded-xl ${
-                  scrolled ? "bg-white" : "bg-white/85 backdrop-blur-sm"
-                }`}
-              >
-                {link.label}
-                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-primary to-accent group-hover:w-full transition-all duration-300"></span>
-              </Link>
+          <div className="hidden md:flex flex-1 mx-4 justify-center gap-2 lg:gap-3">
+            {navGroups.map((group) => (
+              <div key={group.label} className="relative group">
+                <button
+                  className={`text-foreground hover:text-primary font-medium transition-colors duration-300 text-xs lg:text-sm px-3 py-1.5 rounded-xl shrink-0 inline-flex items-center gap-1 ${
+                    scrolled ? "bg-white" : "bg-white/85 backdrop-blur-sm"
+                  }`}
+                >
+                  {group.label}
+                  <ChevronDown size={14} />
+                </button>
+                <div className="absolute left-0 top-full pt-2 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                  <div className="min-w-56 bg-white border border-border rounded-xl shadow-lg p-2">
+                    {group.items.map((item) => (
+                      <Link
+                        key={item.href}
+                        href={item.href}
+                        className="block px-3 py-2 rounded-lg text-sm text-foreground hover:bg-muted transition-colors"
+                      >
+                        {item.label}
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              </div>
             ))}
           </div>
 
@@ -91,15 +124,20 @@ export default function Navigation() {
         {isOpen && (
           <div className="md:hidden pb-4 animate-in fade-in slide-in-from-top-2 duration-300">
             <div className="flex flex-col gap-2">
-              {navLinks.map((link) => (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  className="px-4 py-2 text-foreground hover:bg-muted rounded-lg transition-colors duration-300 text-sm"
-                  onClick={() => setIsOpen(false)}
-                >
-                  {link.label}
-                </Link>
+              {navGroups.map((group) => (
+                <div key={group.label} className="bg-white/80 rounded-xl p-2">
+                  <p className="px-2 py-1 text-xs font-semibold text-foreground/60 uppercase tracking-wide">{group.label}</p>
+                  {group.items.map((item) => (
+                    <Link
+                      key={item.href}
+                      href={item.href}
+                      className="block px-4 py-2 text-foreground hover:bg-muted rounded-lg transition-colors duration-300 text-sm"
+                      onClick={() => setIsOpen(false)}
+                    >
+                      {item.label}
+                    </Link>
+                  ))}
+                </div>
               ))}
               <div className="flex flex-col gap-2 pt-2 border-t border-border">
                 <Link

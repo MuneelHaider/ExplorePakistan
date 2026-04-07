@@ -5,6 +5,7 @@ import { Analytics } from "@vercel/analytics/next"
 import "./globals.css"
 import Navigation from "@/components/navigation"
 import Footer from "@/components/footer"
+import MultiLanguageTouristChatbot from "@/components/multi-language-tourist-chatbot"
 
 const _geist = Geist({ subsets: ["latin"] })
 const _geistMono = Geist_Mono({ subsets: ["latin"] })
@@ -32,6 +33,7 @@ export default function RootLayout({
         <Navigation />
         {children}
         <Footer />
+        <MultiLanguageTouristChatbot />
         <Analytics />
       </body>
     </html>
