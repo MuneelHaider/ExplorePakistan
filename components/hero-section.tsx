@@ -6,6 +6,8 @@ import { Search, MapPin } from "lucide-react"
 
 export default function HeroSection() {
   const [isVisible, setIsVisible] = useState(false)
+  const heroColorStart = "lab(70% -20 24)"
+  const heroColorEnd = "lab(78% -14 30)"
 
   useEffect(() => {
     setIsVisible(true)
@@ -36,7 +38,10 @@ export default function HeroSection() {
         >
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-3 md:mb-4 leading-tight">
             Discover the{" "}
-            <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+            <span
+              className="bg-clip-text text-transparent"
+              style={{ backgroundImage: `linear-gradient(to right, ${heroColorStart}, ${heroColorEnd})` }}
+            >
               Beauty of Pakistan
             </span>
           </h1>
@@ -51,18 +56,21 @@ export default function HeroSection() {
           className={`transition-all duration-1000 transform ${isVisible ? "translate-y-0 opacity-100" : "translate-y-4 opacity-0"}`}
           style={{ transitionDelay: "400ms" }}
         >
-          <div className="flex flex-col sm:flex-row gap-2 md:gap-3 justify-center mb-6 md:mb-8 max-w-2xl mx-auto">
+          <div className="flex flex-col sm:flex-row gap-2 md:gap-3 justify-center mb-6 md:mb-8 max-w-2xl mx-auto items-stretch">
             <div className="flex-1 relative">
               <div className="relative flex items-center">
                 <MapPin className="absolute left-3 md:left-4 text-primary pointer-events-none" size={18} />
                 <input
                   type="text"
                   placeholder="Where to explore?"
-                  className="w-full pl-10 md:pl-12 pr-3 md:pr-4 py-2.5 md:py-3 rounded-full border-2 border-white/40 focus:border-primary outline-none transition-all duration-300 bg-white/95 hover:shadow-lg text-sm md:text-base"
+                  className="w-full h-12 pl-10 md:pl-12 pr-3 md:pr-4 rounded-full border-2 border-white/40 focus:border-primary outline-none transition-all duration-300 bg-white/95 hover:shadow-lg text-sm md:text-base"
                 />
               </div>
             </div>
-            <button className="w-full sm:w-auto sm:flex-none mt-2 px-6 md:px-8 py-2.5 md:py-3 bg-gradient-to-r from-primary to-accent text-white rounded-full font-semibold hover:shadow-lg transform hover:scale-105 transition-all duration-300 flex items-center justify-center gap-2 text-sm md:text-base max-w-[200px] mx-auto sm:max-w-none sm:mx-0">
+            <button
+              className="w-full sm:w-auto sm:flex-none mt-2 sm:mt-0 px-6 md:px-8 h-12 text-white rounded-full font-semibold hover:shadow-lg transform hover:scale-105 transition-all duration-300 flex items-center justify-center gap-2 text-sm md:text-base max-w-[200px] mx-auto sm:max-w-none sm:mx-0"
+              style={{ backgroundImage: `linear-gradient(to right, ${heroColorStart}, ${heroColorEnd})` }}
+            >
               <Search size={18} />
               <span>Search</span>
             </button>
@@ -82,7 +90,8 @@ export default function HeroSection() {
           </Link>
           <Link
             href="/guides"
-            className="w-full sm:w-auto px-6 md:px-8 py-2.5 md:py-3 border-2 border-primary bg-primary text-white rounded-full font-semibold hover:bg-primary/90 transform hover:scale-105 transition-all duration-300 text-sm md:text-base max-w-[220px] mx-auto sm:max-w-none sm:mx-0"
+            className="w-full sm:w-auto px-6 md:px-8 py-2.5 md:py-3 text-white rounded-full font-semibold hover:opacity-95 transform hover:scale-105 transition-all duration-300 text-sm md:text-base max-w-[220px] mx-auto sm:max-w-none sm:mx-0"
+            style={{ backgroundImage: `linear-gradient(to right, ${heroColorStart}, ${heroColorEnd})` }}
           >
             Find Tour Guides
           </Link>
