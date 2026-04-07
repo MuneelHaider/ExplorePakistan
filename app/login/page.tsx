@@ -28,7 +28,7 @@ export default function LoginPage() {
   }
 
   return (
-    <main className="min-h-screen bg-gradient-to-br from-emerald-50 via-white to-amber-50 flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8 pt-24">
+    <main className="min-h-screen bg-gradient-to-br from-emerald-50 via-white to-amber-50 flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8 pt-16">
       <div className="w-full max-w-md">
         {/* Left Side - Info Section (Hidden on mobile, visible on larger screens) */}
         <div

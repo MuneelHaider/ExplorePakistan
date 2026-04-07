@@ -27,7 +27,7 @@ export default function GuideDashboard() {
   ]
 
   return (
-    <main className="min-h-screen bg-gradient-to-b from-emerald-50 to-white pt-24">
+    <main className="min-h-screen bg-gradient-to-b from-emerald-50 to-white pt-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         {/* Header */}
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-12 animate-in fade-in duration-500">

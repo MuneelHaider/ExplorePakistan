@@ -11,7 +11,7 @@ export default function AboutPage() {
   }, [])
 
   return (
-    <main className="min-h-screen bg-background pt-24">
+    <main className="min-h-screen bg-background pt-16">
       <div className={`transition-opacity duration-1000 ${isLoaded ? "opacity-100" : "opacity-0"}`}>
         <FeaturesSection />
       </div>

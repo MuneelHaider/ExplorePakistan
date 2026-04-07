@@ -53,7 +53,7 @@ export default function ActivitiesPage() {
   const { ref, inView } = useInView()
 
   return (
-    <main className="min-h-screen bg-gradient-to-b from-white via-emerald-50 to-white pt-24">
+    <main className="min-h-screen bg-gradient-to-b from-white via-emerald-50 to-white pt-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         {/* Header */}
         <div className="mb-16 text-center animate-in fade-in slide-in-from-top-4 duration-700">

@@ -36,7 +36,7 @@ export default function EmergencyHelpPage() {
   const filteredDocs = lostDocumentHelp.filter((s) => s.toLowerCase().includes(query.toLowerCase()))
 
   return (
-    <main className="min-h-screen bg-gradient-to-b from-white via-emerald-50 to-white pt-24">
+    <main className="min-h-screen bg-gradient-to-b from-white via-emerald-50 to-white pt-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 mb-3">
           <h1 className="text-4xl md:text-5xl font-bold text-foreground">Emergency Help</h1>

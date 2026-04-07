@@ -10,7 +10,7 @@ export default function GuideDetailPage({ params }: { params: { id: string } }) 
   const [contactMethod, setContactMethod] = useState<"phone" | "email" | "whatsapp">("whatsapp")
 
   return (
-    <main className="min-h-screen bg-white pt-24">
+    <main className="min-h-screen bg-white pt-16">
       {/* Hero Section */}
       <div className="bg-gradient-to-r from-primary via-emerald-600 to-accent relative h-96 overflow-hidden">
         <img

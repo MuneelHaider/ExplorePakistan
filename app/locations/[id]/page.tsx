@@ -141,7 +141,7 @@ export default function LocationDetailPage({ params }: { params: { id: string } 
   const [isFaved, setIsFaved] = useState(false)
 
   return (
-    <main className="min-h-screen bg-white pt-24">
+    <main className="min-h-screen bg-white pt-16">
       {/* Hero Image */}
       <div className="relative h-96 md:h-[500px] overflow-hidden">
         <img src={location.image || "/placeholder.svg"} alt={location.name} className="w-full h-full object-cover" />
