@@ -143,24 +143,36 @@ const destinationGuides = [
 
 export default function DestinationGuidePage() {
   const [openCard, setOpenCard] = useState<string | null>(null)
+  const [query, setQuery] = useState("")
+  const filteredGuides = destinationGuides.filter((guide) =>
+    `${guide.name} ${guide.region} ${guide.summary}`.toLowerCase().includes(query.toLowerCase()),
+  )
 
   return (
     <main className="min-h-screen bg-gradient-to-b from-white via-emerald-50 to-white pt-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-3">Destination Guide</h1>
+        <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 mb-3">
+          <h1 className="text-4xl md:text-5xl font-bold text-foreground">Destination Guide</h1>
+          <input
+            value={query}
+            onChange={(e) => setQuery(e.target.value)}
+            placeholder="Search destinations..."
+            className="w-full md:w-[420px] px-4 py-3 rounded-xl border-2 border-foreground/40 bg-white/95 focus:border-foreground/70 outline-none placeholder:text-foreground/70"
+          />
+        </div>
         <p className="text-foreground/70 mb-10 max-w-3xl">
           Plan smarter with route highlights, best seasons, and trip focus areas for Pakistan's most popular destinations.
         </p>
 
         <motion.div layout className="grid grid-cols-1 md:grid-cols-2 gap-6 auto-rows-min">
-          {destinationGuides.map((guide) => (
+          {filteredGuides.map((guide, idx) => (
             <motion.div
               layout
               transition={{ type: "spring", stiffness: 75, damping: 18, mass: 1.1 }}
               key={guide.name}
-              className={`bg-white border border-border rounded-2xl p-6 shadow-sm transition-[box-shadow] duration-300 ${
+              className={`border border-border rounded-2xl p-6 shadow-sm transition-[box-shadow] duration-300 ${
                 openCard === guide.name ? "md:col-span-2" : ""
-              }`}
+              } ${idx % 2 === 0 ? "bg-white" : "bg-gradient-to-br from-white to-emerald-50/80"}`}
             >
               <h2 className="text-2xl font-bold text-foreground mb-2">{guide.name}</h2>
               <p className="text-sm text-primary font-semibold mb-2">

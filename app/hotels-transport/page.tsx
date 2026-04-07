@@ -1,3 +1,6 @@
+"use client"
+import { useState } from "react"
+
 const hotelTransport = [
   {
     destination: "Concordia & K2 Base Camp",
@@ -98,17 +101,33 @@ const hotelTransport = [
 ]
 
 export default function HotelsTransportPage() {
+  const [query, setQuery] = useState("")
+  const filtered = hotelTransport.filter((item) =>
+    `${item.destination} ${item.hotels.map((h) => h.name).join(" ")} ${item.transports.map((t) => t.name).join(" ")}`.toLowerCase().includes(query.toLowerCase()),
+  )
+
   return (
     <main className="min-h-screen bg-gradient-to-b from-white via-emerald-50 to-white pt-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-3">Hotels & Transport</h1>
+        <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 mb-3">
+          <h1 className="text-4xl md:text-5xl font-bold text-foreground">Hotels & Transport</h1>
+          <input
+            value={query}
+            onChange={(e) => setQuery(e.target.value)}
+            placeholder="Search destination, hotel, or transport..."
+            className="w-full md:w-[440px] px-4 py-3 rounded-xl border-2 border-foreground/40 bg-white/95 focus:border-foreground/70 outline-none placeholder:text-foreground/70"
+          />
+        </div>
         <p className="text-foreground/70 mb-10 max-w-3xl">
           Stay and travel recommendations for our active destination network, optimized for comfort and route safety.
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {hotelTransport.map((item) => (
-            <div key={item.destination} className="bg-white border border-border rounded-2xl p-6 shadow-sm">
+          {filtered.map((item, idx) => (
+            <div
+              key={item.destination}
+              className={`border border-border rounded-2xl p-6 shadow-sm ${idx % 2 === 0 ? "bg-white" : "bg-gradient-to-br from-white to-sky-50/70"}`}
+            >
               <img src={item.photo} alt={item.destination} className="w-full h-44 object-cover rounded-xl mb-4" />
               <h2 className="text-2xl font-bold text-foreground mb-3">{item.destination}</h2>
               <p className="font-semibold text-foreground mb-2">Hotels</p>

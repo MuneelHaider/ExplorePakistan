@@ -184,24 +184,36 @@ const packages = [
 export default function TourPackagesPage() {
   const [openCard, setOpenCard] = useState<string | null>(null)
   const [imageOk, setImageOk] = useState<Record<string, boolean>>({})
+  const [query, setQuery] = useState("")
+  const filteredPackages = packages.filter((pkg) =>
+    `${pkg.name} ${pkg.destinations} ${pkg.guide.name} ${pkg.difficulty}`.toLowerCase().includes(query.toLowerCase()),
+  )
 
   return (
     <main className="min-h-screen bg-gradient-to-b from-white via-emerald-50 to-white pt-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <h1 className="text-4xl md:text-5xl font-bold text-foreground mb-3">Tour Packages</h1>
+        <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 mb-3">
+          <h1 className="text-4xl md:text-5xl font-bold text-foreground">Tour Packages</h1>
+          <input
+            value={query}
+            onChange={(e) => setQuery(e.target.value)}
+            placeholder="Search packages, guides, or destinations..."
+            className="w-full md:w-[440px] px-4 py-3 rounded-xl border-2 border-foreground/40 bg-white/95 focus:border-foreground/70 outline-none placeholder:text-foreground/70"
+          />
+        </div>
         <p className="text-foreground/70 mb-10 max-w-3xl">
           Curated package options built around the destinations and guides already available in Visit Pakistan.
         </p>
 
         <motion.div layout className="grid grid-cols-1 md:grid-cols-2 gap-6 auto-rows-min">
-          {packages.map((pkg) => (
+          {filteredPackages.map((pkg, idx) => (
             <motion.div
               layout
               transition={{ type: "spring", stiffness: 75, damping: 18, mass: 1.1 }}
               key={pkg.name}
-              className={`bg-white border border-border rounded-2xl p-6 shadow-sm ${
+              className={`border border-border rounded-2xl p-6 shadow-sm ${
                 openCard === pkg.name ? "md:col-span-2" : ""
-              }`}
+              } ${idx % 2 === 0 ? "bg-white" : "bg-gradient-to-br from-white to-amber-50/70"}`}
             >
               <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-2 mb-2">
                 <h2 className="text-2xl font-bold text-foreground">{pkg.name}</h2>
