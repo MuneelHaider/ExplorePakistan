@@ -1,51 +1,99 @@
 const hotelTransport = [
   {
+    destination: "Concordia & K2 Base Camp",
+    photo: "/SALAM/Concordia & K2 Base Camp, Gilgit Baltistan.jpg",
+    hotels: [
+      { name: "Askole Trekker Lodge", rating: "4.5", person: "Rashid Karim", phone: "+92 333 1203344", price: "PKR 14,000-24,000 / night" },
+      { name: "Baltoro Base Camp Retreat", rating: "4.4", person: "Ali Mehdi", phone: "+92 321 4518812", price: "PKR 16,000-28,000 / night" },
+    ],
+    transports: [
+      { name: "Skardu 4x4 Expedition Line", rating: "4.7", person: "Nasir Ali", phone: "+92 300 4488701", price: "PKR 35,000-55,000 / day" },
+      { name: "Askole Mountain Transit", rating: "4.6", person: "Javed Iqbal", phone: "+92 334 2255402", price: "PKR 28,000-45,000 / day" },
+    ],
+  },
+  {
     destination: "Hunza Valley",
     photo: "/SALAM/Hunza, Gilgit Baltistan.jpg",
-    hotels: "Boutique mountain lodges, family guest houses",
-    hotelContact: "Hunza Stay Desk - +92 321 5502201",
-    hotelPerson: "Contact: Maria Karim (Guest Relations)",
-    hotelPrice: "PKR 10,000 - 26,000 / night",
-    transport: "Private van from Gilgit, shared coaster options",
-    transportContact: "Northern Wheels - +92 300 7781140",
-    transportPerson: "Coordinator: Rehan Ali",
-    transportPrice: "PKR 18,000 - 35,000 / day (vehicle class dependent)",
+    hotels: [
+      { name: "Hunza View Residency", rating: "4.6", person: "Maria Karim", phone: "+92 321 5502201", price: "PKR 10,000-26,000 / night" },
+      { name: "Karimabad Heritage Stay", rating: "4.5", person: "Qasim Jan", phone: "+92 344 8822241", price: "PKR 12,000-28,000 / night" },
+    ],
+    transports: [
+      { name: "Northern Wheels Hunza", rating: "4.7", person: "Rehan Ali", phone: "+92 300 7781140", price: "PKR 18,000-35,000 / day" },
+      { name: "Karakoram Route Vans", rating: "4.4", person: "Sajjad Khan", phone: "+92 333 9011160", price: "PKR 14,000-26,000 / day" },
+    ],
   },
   {
     destination: "Fairy Meadows",
     photo: "/SALAM/Fairy Meadows, Gilgit Baltistan.jpg",
-    hotels: "Cabin-style camps, seasonal eco-lodges",
-    hotelContact: "Meadows Camp Line - +92 345 1809044",
-    hotelPerson: "Contact: Shahid Khan",
-    hotelPrice: "PKR 8,000 - 18,000 / night",
-    transport: "4x4 jeep transfer + short guided trek",
-    transportContact: "Raikot Jeep Union - +92 333 5607611",
-    transportPerson: "Dispatcher: Nadeem",
-    transportPrice: "PKR 13,000 - 20,000 / one-way jeep slot",
+    hotels: [
+      { name: "Fairy Camp Cottages", rating: "4.4", person: "Shahid Khan", phone: "+92 345 1809044", price: "PKR 8,000-18,000 / night" },
+      { name: "Nanga Parbat Eco Huts", rating: "4.3", person: "Hamid Shah", phone: "+92 333 1105490", price: "PKR 9,000-19,000 / night" },
+    ],
+    transports: [
+      { name: "Raikot Jeep Union", rating: "4.6", person: "Nadeem", phone: "+92 333 5607611", price: "PKR 13,000-20,000 / one-way" },
+      { name: "Tattu Trail Transfers", rating: "4.5", person: "Arif Hussain", phone: "+92 321 4600012", price: "PKR 11,000-18,000 / one-way" },
+    ],
   },
   {
     destination: "Kumrat Valley",
     photo: "/SALAM/Kumrat Valley, Khyber Pakhtunkhwa.jpg",
-    hotels: "Riverside camps, basic hotels in nearby towns",
-    hotelContact: "Kumrat Valley Stays - +92 312 6678901",
-    hotelPerson: "Contact: Hamza Khan",
-    hotelPrice: "PKR 6,000 - 15,000 / night",
-    transport: "SUV/jeep access recommended",
-    transportContact: "Upper Dir Transit Desk - +92 334 8021170",
-    transportPerson: "Coordinator: Fawad Ahmad",
-    transportPrice: "PKR 14,000 - 28,000 / day",
+    hotels: [
+      { name: "Kumrat Riverside Resort", rating: "4.3", person: "Hamza Khan", phone: "+92 312 6678901", price: "PKR 6,000-15,000 / night" },
+      { name: "Upper Dir Forest Lodge", rating: "4.2", person: "Bashir Ullah", phone: "+92 334 3198005", price: "PKR 7,500-16,500 / night" },
+    ],
+    transports: [
+      { name: "Upper Dir Transit Desk", rating: "4.5", person: "Fawad Ahmad", phone: "+92 334 8021170", price: "PKR 14,000-28,000 / day" },
+      { name: "Kumrat Jeep Access", rating: "4.4", person: "Suleman", phone: "+92 321 3344789", price: "PKR 12,000-22,000 / day" },
+    ],
   },
   {
     destination: "Mahodand Lake",
     photo: "/SALAM/Mahodand Lake, Kalam, Khyber Pakhtunkhwa.png",
-    hotels: "Kalam stays with same-day excursion plans",
-    hotelContact: "Kalam Hotel Circuit - +92 344 7711042",
-    hotelPerson: "Contact: Sameena Bibi",
-    hotelPrice: "PKR 7,500 - 20,000 / night",
-    transport: "4x4 from Kalam to lake-side tracks",
-    transportContact: "Kalam Jeep Service - +92 321 9144502",
-    transportPerson: "Dispatcher: Salman Yousaf",
-    transportPrice: "PKR 10,000 - 17,000 / round trip",
+    hotels: [
+      { name: "Kalam Alpine Suites", rating: "4.4", person: "Sameena Bibi", phone: "+92 344 7711042", price: "PKR 7,500-20,000 / night" },
+      { name: "Usho Valley Lodge", rating: "4.2", person: "Irfan Gul", phone: "+92 333 1458940", price: "PKR 8,000-19,000 / night" },
+    ],
+    transports: [
+      { name: "Kalam Jeep Service", rating: "4.6", person: "Salman Yousaf", phone: "+92 321 9144502", price: "PKR 10,000-17,000 / round trip" },
+      { name: "Usho Adventure Transport", rating: "4.5", person: "Najeeb", phone: "+92 334 6662248", price: "PKR 9,500-16,000 / round trip" },
+    ],
+  },
+  {
+    destination: "Murree Hills",
+    photo: "/SALAM/Murree Hills, Punjab.png",
+    hotels: [
+      { name: "Murree Panorama Hotel", rating: "4.5", person: "Adeel Raza", phone: "+92 300 9184421", price: "PKR 9,000-22,000 / night" },
+      { name: "Pine Crest Murree", rating: "4.3", person: "Naila Aftab", phone: "+92 333 2245611", price: "PKR 8,500-20,000 / night" },
+    ],
+    transports: [
+      { name: "Murree Express Cabs", rating: "4.6", person: "Umer Siddiq", phone: "+92 321 7443110", price: "PKR 8,000-16,000 / day" },
+      { name: "Patriata Shuttle Link", rating: "4.4", person: "Khalid", phone: "+92 333 9201118", price: "PKR 6,500-12,500 / day" },
+    ],
+  },
+  {
+    destination: "Deewar Fort",
+    photo: "/SALAM/Deewar Fort, Bahawalpur Punjab.jpg",
+    hotels: [
+      { name: "Bahawalpur Heritage Inn", rating: "4.2", person: "Faisal Rauf", phone: "+92 321 5194370", price: "PKR 7,000-17,000 / night" },
+      { name: "Cholistan Desert Lodge", rating: "4.1", person: "Imran Bhatti", phone: "+92 300 6124450", price: "PKR 8,500-18,500 / night" },
+    ],
+    transports: [
+      { name: "Cholistan Desert Drives", rating: "4.4", person: "Waqar", phone: "+92 334 5102488", price: "PKR 13,000-24,000 / day" },
+      { name: "Bahawalpur Fort Route Vans", rating: "4.2", person: "Aqeel", phone: "+92 321 8876100", price: "PKR 10,000-18,000 / day" },
+    ],
+  },
+  {
+    destination: "Lansdowne Bridge",
+    photo: "/SALAM/Lansdowne Bridge Sukkur, Sindh.jpg",
+    hotels: [
+      { name: "Sukkur Riverside Hotel", rating: "4.3", person: "Farhan Ali", phone: "+92 333 5039988", price: "PKR 8,000-16,500 / night" },
+      { name: "Indus View Residency", rating: "4.2", person: "Saima Noor", phone: "+92 300 2143300", price: "PKR 7,000-14,500 / night" },
+    ],
+    transports: [
+      { name: "Sukkur City Transit", rating: "4.4", person: "Noman", phone: "+92 321 5134490", price: "PKR 6,000-12,000 / day" },
+      { name: "Indus Route Cabs", rating: "4.3", person: "Yasir", phone: "+92 334 2297761", price: "PKR 5,500-11,000 / day" },
+    ],
   },
 ]
 
@@ -63,18 +111,31 @@ export default function HotelsTransportPage() {
             <div key={item.destination} className="bg-white border border-border rounded-2xl p-6 shadow-sm">
               <img src={item.photo} alt={item.destination} className="w-full h-44 object-cover rounded-xl mb-4" />
               <h2 className="text-2xl font-bold text-foreground mb-3">{item.destination}</h2>
-              <p className="text-foreground/80 mb-1">
-                <span className="font-semibold">Hotels:</span> {item.hotels}
-              </p>
-              <p className="text-sm text-foreground/70 mb-1">{item.hotelPerson}</p>
-              <p className="text-sm text-primary mb-1">{item.hotelContact}</p>
-              <p className="text-sm text-foreground/70 mb-3">{item.hotelPrice}</p>
-              <p className="text-foreground/70 mb-1">
-                <span className="font-semibold">Transport:</span> {item.transport}
-              </p>
-              <p className="text-sm text-foreground/70 mb-1">{item.transportPerson}</p>
-              <p className="text-sm text-primary mb-1">{item.transportContact}</p>
-              <p className="text-sm text-foreground/70">{item.transportPrice}</p>
+              <p className="font-semibold text-foreground mb-2">Hotels</p>
+              <div className="space-y-3 mb-4">
+                {item.hotels.map((hotel) => (
+                  <div key={hotel.name} className="bg-emerald-50 rounded-xl p-3">
+                    <p className="font-semibold text-foreground">{hotel.name}</p>
+                    <p className="text-sm text-foreground/70">Rating: {hotel.rating} / 5</p>
+                    <p className="text-sm text-foreground/70">Contact Person: {hotel.person}</p>
+                    <p className="text-sm text-primary">Tel: {hotel.phone}</p>
+                    <p className="text-sm text-foreground/70">{hotel.price}</p>
+                  </div>
+                ))}
+              </div>
+
+              <p className="font-semibold text-foreground mb-2">Transport Services</p>
+              <div className="space-y-3">
+                {item.transports.map((service) => (
+                  <div key={service.name} className="bg-amber-50 rounded-xl p-3">
+                    <p className="font-semibold text-foreground">{service.name}</p>
+                    <p className="text-sm text-foreground/70">Rating: {service.rating} / 5</p>
+                    <p className="text-sm text-foreground/70">Contact Person: {service.person}</p>
+                    <p className="text-sm text-primary">Tel: {service.phone}</p>
+                    <p className="text-sm text-foreground/70">{service.price}</p>
+                  </div>
+                ))}
+              </div>
             </div>
           ))}
         </div>

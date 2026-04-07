@@ -69,6 +69,7 @@ export default function Navigation() {
       items: [
         { label: "What to Do", href: "/activities" },
         { label: "Tour Packages", href: "/tour-packages" },
+        { label: "Tour Operators", href: "/tour-operators" },
         { label: "Hotels & Transport", href: "/hotels-transport" },
         { label: "Find Tour Guides", href: "/guides" },
       ],

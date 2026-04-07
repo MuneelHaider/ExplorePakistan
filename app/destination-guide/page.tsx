@@ -71,6 +71,74 @@ const destinationGuides = [
       ],
     },
   },
+  {
+    name: "Mahodand Lake",
+    region: "Khyber Pakhtunkhwa",
+    bestTime: "Jun-Sep",
+    summary: "Crystal-clear alpine lake in Kalam, perfect for boating, picnics, and nature views.",
+    image: "/SALAM/Mahodand Lake, Kalam, Khyber Pakhtunkhwa.png",
+    details: {
+      altitude: "~2,865m",
+      duration: "1 full day from Kalam or 2-day relaxed trip",
+      route: "Kalam -> Usho road -> Mahodand Lake",
+      travelTips: [
+        "Use a jeep from Kalam for a smoother and safer journey.",
+        "Start early to enjoy better weather and fewer crowds.",
+        "Carry light rainwear and a warm layer near the waterline.",
+      ],
+    },
+  },
+  {
+    name: "Murree Hills",
+    region: "Punjab",
+    bestTime: "May-Oct",
+    summary: "Popular hill station getaway with scenic roads, viewpoints, and cool weather.",
+    image: "/SALAM/Murree Hills, Punjab.png",
+    details: {
+      altitude: "~2,291m",
+      duration: "2-3 days",
+      route: "Islamabad/Rawalpindi -> Murree Expressway -> Mall Road area",
+      travelTips: [
+        "Weekdays are calmer; weekends can be heavily crowded.",
+        "Pre-book parking and stay during peak summer holidays.",
+        "Carry light jackets even in warm months for evenings.",
+      ],
+    },
+  },
+  {
+    name: "Deewar Fort",
+    region: "Bahawalpur, Punjab",
+    bestTime: "Oct-Mar",
+    summary: "Historic desert fort in Cholistan with rich heritage and dramatic surroundings.",
+    image: "/SALAM/Deewar Fort, Bahawalpur Punjab.jpg",
+    details: {
+      altitude: "Desert plains terrain",
+      duration: "1-2 days",
+      route: "Bahawalpur -> Cholistan desert track -> Derawar/Deewar fort region",
+      travelTips: [
+        "Travel with a local driver who knows desert routes.",
+        "Carry extra water, sunblock, and cash for remote stops.",
+        "Visit around sunset for great photography and cooler weather.",
+      ],
+    },
+  },
+  {
+    name: "Lansdowne Bridge",
+    region: "Sukkur, Sindh",
+    bestTime: "Nov-Feb",
+    summary: "Historic bridge landmark over the Indus, ideal for heritage and riverfront visits.",
+    image: "/SALAM/Lansdowne Bridge Sukkur, Sindh.jpg",
+    details: {
+      altitude: "River-city terrain",
+      duration: "Half-day to 1 day",
+      route: "Sukkur city center -> Lansdowne Bridge and nearby riverfront",
+      travelTips: [
+        "Evening hours offer pleasant weather and better skyline views.",
+        "Combine with Sukkur Barrage and local city heritage spots.",
+        "Use local guide support for historical context and safer routing.",
+      ],
+    },
+  },
 ]
 
 export default function DestinationGuidePage() {
