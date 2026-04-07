@@ -95,7 +95,7 @@ export default function Navigation() {
           <Link href="/" className="group flex items-center h-full px-2 py-1">
             <div className="relative h-[3.75rem] w-56 sm:w-60 lg:w-64 transform group-hover:scale-[1.02] transition-transform duration-300">
               <Image
-                src="/logo-visitpakistan1.jpeg"
+                src="/logoReal.png"
                 alt="Visit Pakistan Logo"
                 fill
                 className="object-contain"

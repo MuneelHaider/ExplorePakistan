@@ -16,7 +16,7 @@ export default function Footer() {
             <Link href="/" className="flex items-center gap-2 group">
               <div className="w-10 h-10 relative transform group-hover:scale-110 transition-transform duration-300">
                 <Image
-                  src="/logo-visitpakistan.jpeg"
+                  src="/logoReal.png"
                   alt="Visit Pakistan Logo"
                   fill
                   className="object-contain rounded-lg"

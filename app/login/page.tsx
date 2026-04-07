@@ -38,7 +38,7 @@ export default function LoginPage() {
             <div className="inline-flex items-center gap-2 mb-6">
               <div className="w-10 h-10 relative">
                 <Image
-                  src="/logo-visitpakistan.jpeg"
+                  src="/logoReal.png"
                   alt="Visit Pakistan Logo"
                   fill
                   className="object-contain rounded-lg"
