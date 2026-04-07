@@ -84,10 +84,10 @@ export default function Footer() {
               <li className="flex items-center gap-3">
                 <Mail className="text-primary flex-shrink-0" size={18} />
                 <a
-                  href="mailto:info@experiencepakistan.pk"
+                  href="mailto:info@visitpakistan.site"
                   className="text-sm text-foreground/70 hover:text-primary transition-colors duration-300"
                 >
-                  info@experiencepakistan.pk
+                  info@visitpakistan.site
                 </a>
               </li>
             </ul>

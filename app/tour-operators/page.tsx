@@ -70,7 +70,7 @@ export default function TourOperatorsPage() {
           Verified tour operating companies you can contact directly for custom itineraries across Pakistan.
         </p>
 
-        <div className="space-y-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           {operators.map((op) => (
             <div key={`${op.name}-${op.license}`} className="bg-white border border-border rounded-2xl p-5 shadow-sm">
               <h2 className="text-xl font-bold text-foreground">{op.name}</h2>
