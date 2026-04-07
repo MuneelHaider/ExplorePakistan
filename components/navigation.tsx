@@ -32,22 +32,16 @@ export default function Navigation() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
-          <Link
-            href="/"
-            className={`flex items-center gap-2 group px-3 py-1.5 rounded-xl transition-colors duration-300 ${
-              scrolled ? "bg-white" : "bg-white/85 backdrop-blur-sm"
-            }`}
-          >
-            <div className="w-8 h-8 relative transform group-hover:scale-110 transition-transform duration-300">
+          <Link href="/" className="group flex items-center h-full px-2 py-1">
+            <div className="relative h-[3.75rem] w-56 sm:w-60 lg:w-64 transform group-hover:scale-[1.02] transition-transform duration-300">
               <Image
-                src="/logo-visitpakistan.jpeg"
+                src="/logo-visitpakistan1.jpeg"
                 alt="Visit Pakistan Logo"
                 fill
-                className="object-contain rounded-lg"
-                sizes="32px"
+                className="object-contain"
+                sizes="(max-width: 640px) 224px, (max-width: 1024px) 240px, 256px"
               />
             </div>
-            <span className="font-bold text-lg md:text-xl text-foreground hidden sm:block">Visit Pakistan</span>
           </Link>
 
           {/* Desktop Navigation */}
