@@ -43,7 +43,7 @@ export default function MultiLanguageTouristChatbot() {
   }
 
   return (
-    <div className="fixed right-4 bottom-4 z-[200]">
+    <div className="fixed right-4 bottom-4 z-[200] flex flex-col items-end">
       {open && (
         <div className="w-[320px] sm:w-[360px] h-[420px] bg-white rounded-2xl shadow-2xl border border-border overflow-hidden mb-3">
           <div className="h-12 px-4 flex items-center justify-between bg-gradient-to-r from-primary to-accent text-white">

@@ -3,11 +3,17 @@
 import Link from "next/link"
 import Image from "next/image"
 import { useState, useEffect } from "react"
+import { usePathname, useRouter } from "next/navigation"
 import { Menu, X, ChevronDown } from "lucide-react"
 
 export default function Navigation() {
+  const router = useRouter()
+  const pathname = usePathname()
   const [isOpen, setIsOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
+  const [isLoggedIn, setIsLoggedIn] = useState(false)
+  const [userEmail, setUserEmail] = useState("")
+  const [isProfileOpen, setIsProfileOpen] = useState(false)
 
   useEffect(() => {
     const handleScroll = () => {
@@ -16,6 +22,38 @@ export default function Navigation() {
     window.addEventListener("scroll", handleScroll)
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
+
+  useEffect(() => {
+    const storedUser = localStorage.getItem("user")
+    if (!storedUser) {
+      setIsLoggedIn(false)
+      setUserEmail("")
+      return
+    }
+
+    try {
+      const parsedUser = JSON.parse(storedUser) as { email?: string }
+      setIsLoggedIn(true)
+      setUserEmail(parsedUser.email ?? "")
+    } catch {
+      setIsLoggedIn(false)
+      setUserEmail("")
+    }
+  }, [pathname])
+
+  const getInitial = () => {
+    if (!userEmail) return "U"
+    return userEmail.charAt(0).toUpperCase()
+  }
+
+  const handleLogout = () => {
+    localStorage.removeItem("user")
+    setIsLoggedIn(false)
+    setUserEmail("")
+    setIsProfileOpen(false)
+    setIsOpen(false)
+    router.push("/")
+  }
 
   const navGroups = [
     {
@@ -94,21 +132,46 @@ export default function Navigation() {
           </div>
 
           {/* Auth Links */}
-          <div className="hidden md:flex gap-3">
-            <Link
-              href="/login"
-              className={`px-4 py-1.5 text-foreground hover:text-primary transition-colors duration-300 text-sm lg:text-base rounded-xl ${
-                scrolled ? "bg-white" : "bg-white/85 backdrop-blur-sm"
-              }`}
-            >
-              Login
-            </Link>
-            <Link
-              href="/signup"
-              className="px-5 py-1.5 bg-gradient-to-r from-primary to-accent text-white rounded-xl hover:shadow-lg transform hover:scale-105 transition-all duration-300 font-medium text-sm lg:text-base"
-            >
-              Sign Up
-            </Link>
+          <div className="hidden md:flex gap-3 items-center">
+            {isLoggedIn ? (
+              <div className="relative">
+                <button
+                  onClick={() => setIsProfileOpen((prev) => !prev)}
+                  className="w-10 h-10 rounded-full bg-gradient-to-r from-primary to-accent text-white font-semibold flex items-center justify-center shadow-md"
+                  aria-label="Open profile menu"
+                >
+                  {getInitial()}
+                </button>
+                {isProfileOpen && (
+                  <div className="absolute right-0 top-full mt-2 min-w-48 bg-white border border-border rounded-xl shadow-lg p-2 z-50">
+                    <p className="px-3 py-2 text-xs text-foreground/60 truncate">{userEmail || "Logged in user"}</p>
+                    <button
+                      onClick={handleLogout}
+                      className="w-full text-left px-3 py-2 rounded-lg text-sm text-foreground hover:bg-muted transition-colors"
+                    >
+                      Logout
+                    </button>
+                  </div>
+                )}
+              </div>
+            ) : (
+              <>
+                <Link
+                  href="/login"
+                  className={`px-4 py-1.5 text-foreground hover:text-primary transition-colors duration-300 text-sm lg:text-base rounded-xl ${
+                    scrolled ? "bg-white" : "bg-white/85 backdrop-blur-sm"
+                  }`}
+                >
+                  Login
+                </Link>
+                <Link
+                  href="/signup"
+                  className="px-5 py-1.5 bg-gradient-to-r from-primary to-accent text-white rounded-xl hover:shadow-lg transform hover:scale-105 transition-all duration-300 font-medium text-sm lg:text-base"
+                >
+                  Sign Up
+                </Link>
+              </>
+            )}
           </div>
 
           {/* Mobile Menu Button */}
@@ -140,20 +203,36 @@ export default function Navigation() {
                 </div>
               ))}
               <div className="flex flex-col gap-2 pt-2 border-t border-border">
-                <Link
-                  href="/login"
-                  className="px-4 py-2 text-foreground hover:bg-muted rounded-lg transition-colors duration-300 text-sm"
-                  onClick={() => setIsOpen(false)}
-                >
-                  Login
-                </Link>
-                <Link
-                  href="/signup"
-                  className="px-4 py-2 bg-gradient-to-r from-primary to-accent text-white rounded-lg text-center font-medium text-sm"
-                  onClick={() => setIsOpen(false)}
-                >
-                  Sign Up
-                </Link>
+                {isLoggedIn ? (
+                  <>
+                    <div className="px-4 py-2 rounded-lg bg-white/80 text-sm text-foreground">
+                      Logged in as <span className="font-semibold">{userEmail || "user"}</span>
+                    </div>
+                    <button
+                      onClick={handleLogout}
+                      className="px-4 py-2 text-left text-foreground hover:bg-muted rounded-lg transition-colors duration-300 text-sm"
+                    >
+                      Logout
+                    </button>
+                  </>
+                ) : (
+                  <>
+                    <Link
+                      href="/login"
+                      className="px-4 py-2 text-foreground hover:bg-muted rounded-lg transition-colors duration-300 text-sm"
+                      onClick={() => setIsOpen(false)}
+                    >
+                      Login
+                    </Link>
+                    <Link
+                      href="/signup"
+                      className="px-4 py-2 bg-gradient-to-r from-primary to-accent text-white rounded-lg text-center font-medium text-sm"
+                      onClick={() => setIsOpen(false)}
+                    >
+                      Sign Up
+                    </Link>
+                  </>
+                )}
               </div>
             </div>
           </div>
