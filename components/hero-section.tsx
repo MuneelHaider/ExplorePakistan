@@ -17,12 +17,12 @@ export default function HeroSection() {
     <section className="relative w-full min-h-screen flex items-center justify-center overflow-hidden pt-24 pb-8">
       {/* Full background video */}
       <video
-        src="/SALAM/SP - Scenic Beauty (TV Release - HD) 007.mp4"
+        src="/SALAM/Nature - Saad Abdullah (1) (1).mp4"
         autoPlay
         muted
         loop
         playsInline
-        className="absolute inset-0 w-full h-full object-cover"
+        className="absolute inset-0 w-full h-full min-w-full min-h-full object-cover scale-[1.12] md:scale-[1.08]"
         aria-label="Scenic beauty of Pakistan"
       />
 
