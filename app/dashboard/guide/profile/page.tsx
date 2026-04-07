@@ -60,7 +60,7 @@ export default function GuideProfilePage() {
                 <div>
                   <label className="block text-sm font-semibold text-foreground mb-2">Bio</label>
                   <textarea
-                    defaultValue="Expert in Northern Areas hiking and mountaineering with 15+ years experience"
+                    defaultValue="Expert in K2 Base Camp hiking and mountaineering with 15+ years experience"
                     className="w-full px-4 py-3 border-2 border-border rounded-lg focus:border-primary outline-none transition-all"
                     rows={4}
                   ></textarea>
@@ -93,7 +93,7 @@ export default function GuideProfilePage() {
                 <div>
                   <p className="text-sm text-foreground/60 font-semibold mb-2">Bio</p>
                   <p className="text-foreground">
-                    Expert in Northern Areas hiking and mountaineering with 15+ years experience
+                    Expert in K2 Base Camp hiking and mountaineering with 15+ years experience
                   </p>
                 </div>
                 <div>

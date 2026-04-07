@@ -12,7 +12,7 @@ const topGuides = [
     rating: 4.9,
     reviews: 156,
     image: "/pakistani-tour-guide-professional-male.jpg",
-    bio: "Expert in Northern Areas hiking and mountaineering",
+    bio: "Expert in K2 Base Camp and northern trekking",
   },
   {
     id: 2,
@@ -39,7 +39,7 @@ const topGuides = [
     rating: 4.7,
     reviews: 128,
     image: "/pakistani-nature-guide-professional-woman.jpg",
-    bio: "Hunza Valley specialist with local insights",
+    bio: "Hunza Valley and Kumrat specialist with local insights",
   },
 ]
 

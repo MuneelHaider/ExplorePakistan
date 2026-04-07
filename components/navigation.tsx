@@ -32,7 +32,12 @@ export default function Navigation() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-2 group">
+          <Link
+            href="/"
+            className={`flex items-center gap-2 group px-3 py-1.5 rounded-xl transition-colors duration-300 ${
+              scrolled ? "bg-white" : "bg-white/85 backdrop-blur-sm"
+            }`}
+          >
             <div className="w-8 h-8 relative transform group-hover:scale-110 transition-transform duration-300">
               <Image
                 src="/logo-visitpakistan.jpeg"
@@ -51,7 +56,9 @@ export default function Navigation() {
               <Link
                 key={link.href}
                 href={link.href}
-                className="text-foreground hover:text-primary font-medium transition-colors duration-300 relative group text-sm lg:text-base"
+                className={`text-foreground hover:text-primary font-medium transition-colors duration-300 relative group text-sm lg:text-base px-4 py-1.5 rounded-xl ${
+                  scrolled ? "bg-white" : "bg-white/85 backdrop-blur-sm"
+                }`}
               >
                 {link.label}
                 <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-gradient-to-r from-primary to-accent group-hover:w-full transition-all duration-300"></span>
@@ -63,13 +70,15 @@ export default function Navigation() {
           <div className="hidden md:flex gap-3">
             <Link
               href="/login"
-              className="px-4 py-2 text-foreground hover:text-primary transition-colors duration-300 text-sm lg:text-base"
+              className={`px-4 py-1.5 text-foreground hover:text-primary transition-colors duration-300 text-sm lg:text-base rounded-xl ${
+                scrolled ? "bg-white" : "bg-white/85 backdrop-blur-sm"
+              }`}
             >
               Login
             </Link>
             <Link
               href="/signup"
-              className="px-6 py-2 bg-gradient-to-r from-primary to-accent text-white rounded-full hover:shadow-lg transform hover:scale-105 transition-all duration-300 font-medium text-sm lg:text-base"
+              className="px-5 py-1.5 bg-gradient-to-r from-primary to-accent text-white rounded-xl hover:shadow-lg transform hover:scale-105 transition-all duration-300 font-medium text-sm lg:text-base"
             >
               Sign Up
             </Link>

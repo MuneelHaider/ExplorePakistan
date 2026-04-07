@@ -63,7 +63,7 @@ export default function TouristProfilePage() {
                   <label className="block text-sm font-semibold text-foreground mb-2">Favorite Destinations</label>
                   <input
                     type="text"
-                    placeholder="e.g., Northern Areas, Hunza Valley"
+                    placeholder="e.g., Hunza Valley, Fairy Meadows"
                     className="w-full px-4 py-3 border-2 border-border rounded-lg focus:border-primary outline-none transition-all"
                   />
                 </div>
@@ -93,7 +93,7 @@ export default function TouristProfilePage() {
                 <div>
                   <p className="text-sm text-foreground/60 font-semibold mb-2">Favorite Destinations</p>
                   <div className="flex flex-wrap gap-2">
-                    {["Northern Areas", "Hunza Valley", "Skardu"].map((dest) => (
+                    {["Concordia & K2 Base Camp", "Hunza Valley", "Mahodand Lake"].map((dest) => (
                       <span key={dest} className="px-3 py-1 bg-primary/10 text-primary rounded-full text-sm">
                         {dest}
                       </span>

@@ -21,15 +21,15 @@ export default function TouristDashboard() {
   }
 
   const favorites = [
-    { id: 1, name: "Northern Areas", category: "Mountains", saved: true },
+    { id: 1, name: "Concordia & K2 Base Camp", category: "Mountains", saved: true },
     { id: 2, name: "Hunza Valley", category: "Nature", saved: true },
-    { id: 3, name: "Lahore", category: "Culture", saved: false },
+    { id: 3, name: "Fairy Meadows", category: "Trekking", saved: false },
   ]
 
   const trips = [
     { id: 1, destination: "Hunza Valley", guide: "Saira Ahmed", date: "2024-02-15", status: "upcoming" },
-    { id: 2, destination: "Skardu", guide: "Ahmed Khan", date: "2024-01-20", status: "completed" },
-    { id: 3, destination: "Northern Areas", guide: "Hassan Malik", date: "2024-03-01", status: "upcoming" },
+    { id: 2, destination: "Mahodand Lake", guide: "Ahmed Khan", date: "2024-01-20", status: "completed" },
+    { id: 3, destination: "Concordia & K2 Base Camp", guide: "Hassan Malik", date: "2024-03-01", status: "upcoming" },
   ]
 
   return (

@@ -22,8 +22,8 @@ export default function GuideDashboard() {
 
   const bookings = [
     { id: 1, tourist: "John Doe", location: "Hunza Valley", date: "2024-02-15", status: "confirmed" },
-    { id: 2, tourist: "Sarah Smith", location: "Northern Areas", date: "2024-02-20", status: "pending" },
-    { id: 3, tourist: "Mike Wilson", location: "Skardu", date: "2024-01-30", status: "completed" },
+    { id: 2, tourist: "Sarah Smith", location: "Concordia & K2 Base Camp", date: "2024-02-20", status: "pending" },
+    { id: 3, tourist: "Mike Wilson", location: "Mahodand Lake", date: "2024-01-30", status: "completed" },
   ]
 
   return (
@@ -236,7 +236,7 @@ export default function GuideDashboard() {
               <div>
                 <label className="block text-sm font-semibold text-foreground mb-2">Bio</label>
                 <textarea
-                  defaultValue="Expert in Northern Areas hiking and mountaineering with 15+ years experience"
+                  defaultValue="Expert in K2 Base Camp hiking and mountaineering with 15+ years experience"
                   className="w-full px-4 py-2 border border-border rounded-lg focus:border-primary outline-none"
                   rows={4}
                 ></textarea>
