@@ -177,7 +177,7 @@ export const guidesData: GuideProfile[] = [
   },
   {
     id: 6,
-    name: "Ayesha Noor",
+    name: "Ahsan Noor",
     specialty: "Family Travel Facilitator",
     rating: 4.6,
     reviews: 91,
@@ -196,7 +196,7 @@ export const guidesData: GuideProfile[] = [
     specialties: ["Beginner-friendly tours", "Weekend itineraries"],
     contact: {
       phone: "+92 321 9011477",
-      email: "ayesha.noor@visitpakistan.pk",
+      email: "ahsan.noor@visitpakistan.pk",
       whatsapp: "+92 321 9011477",
     },
     reviews_list: [{ reviewer: "Rana F.", rating: 5, text: "Very smooth trip planning for family.", date: "2025-10-01" }],
@@ -229,7 +229,7 @@ export const guidesData: GuideProfile[] = [
   },
   {
     id: 8,
-    name: "Rida Shah",
+    name: "Rizwan Shah",
     specialty: "City Culture & Food Guide",
     rating: 4.6,
     reviews: 88,
@@ -248,7 +248,7 @@ export const guidesData: GuideProfile[] = [
     specialties: ["Culinary routes", "Local market experiences"],
     contact: {
       phone: "+92 300 6677122",
-      email: "rida.shah@visitpakistan.pk",
+      email: "rizwan.shah@visitpakistan.pk",
       whatsapp: "+92 300 6677122",
     },
     reviews_list: [{ reviewer: "Ali N.", rating: 5, text: "Fantastic city-food tour experience.", date: "2025-11-09" }],

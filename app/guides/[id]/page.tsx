@@ -13,18 +13,32 @@ export default function GuideDetailPage({ params }: { params: { id: string } }) 
     <main className="min-h-screen bg-white pt-24">
       {/* Hero Section */}
       <div className="bg-gradient-to-r from-primary via-emerald-600 to-accent relative h-96 overflow-hidden">
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute top-0 right-0 w-96 h-96 bg-white rounded-full blur-3xl"></div>
-        </div>
+        <img
+          src="/SALAM/Kumrat Valley, Khyber Pakhtunkhwa.jpg"
+          alt="Kumrat Valley background"
+          className="absolute inset-0 w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-black/55 via-emerald-900/40 to-amber-900/40"></div>
         <div className="relative z-10 max-w-7xl mx-auto px-4 h-full flex items-end pb-8">
           <div className="flex flex-col md:flex-row gap-8 items-end w-full">
-            <div className="relative w-32 h-32 md:w-48 md:h-48 rounded-2xl overflow-hidden shadow-2xl flex-shrink-0 border-4 border-white">
+            <div className="relative w-40 h-40 md:w-56 md:h-56 rounded-2xl overflow-hidden shadow-2xl flex-shrink-0 border-4 border-white">
               <img src={guide.image || "/placeholder.svg"} alt={guide.name} className="w-full h-full object-cover" />
             </div>
             <div className="text-white pb-2">
               <div className="flex items-center gap-2 mb-2">
                 <h1 className="text-4xl md:text-5xl font-bold">{guide.name}</h1>
-                {guide.verified && <Check className="text-green-300" size={32} />}
+                {guide.verified ? <Check className="text-green-300" size={32} /> : null}
+              </div>
+              <div className="mb-3">
+                {guide.verified ? (
+                  <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-green-500/85 text-white font-bold text-sm md:text-base">
+                    <Check size={18} /> DTS VERIFIED
+                  </span>
+                ) : (
+                  <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-red-500/85 text-white font-bold text-sm md:text-base">
+                    NOT VERIFIED
+                  </span>
+                )}
               </div>
               <p className="text-xl opacity-90 mb-3">{guide.specialty}</p>
               <div className="flex flex-wrap gap-4 text-white">
@@ -139,7 +153,7 @@ export default function GuideDetailPage({ params }: { params: { id: string } }) 
           {/* Sidebar */}
           <div className="lg:col-span-1">
             {/* Contact Card */}
-            <div className="bg-gradient-to-br from-primary via-emerald-600 to-accent rounded-2xl p-6 text-white mb-6 sticky top-24">
+            <div className="bg-gradient-to-br from-primary via-emerald-600 to-accent rounded-2xl p-6 text-white mb-6">
               <h3 className="text-2xl font-bold mb-4">Get in Touch</h3>
 
               {/* Contact Method Selector */}
@@ -208,10 +222,19 @@ export default function GuideDetailPage({ params }: { params: { id: string } }) 
                 <div>
                   <h4 className="font-bold text-foreground mb-2">Safety & Verification</h4>
                   <ul className="text-foreground/70 text-sm space-y-1">
-                    <li>✓ Identity verified</li>
-                    <li>✓ Background checked</li>
-                    <li>✓ Insurance covered</li>
-                    <li>✓ First aid certified</li>
+                    {guide.verified ? (
+                      <>
+                        <li>✓ DTS verified guide profile</li>
+                        <li>✓ Identity and profile documents checked</li>
+                        <li>✓ First aid and route safety briefing capable</li>
+                      </>
+                    ) : (
+                      <>
+                        <li>! This guide is currently not DTS verified</li>
+                        <li>! Verify identity and references before finalizing</li>
+                        <li>! Prefer daytime first meet and safe public handoff</li>
+                      </>
+                    )}
                   </ul>
                 </div>
               </div>
