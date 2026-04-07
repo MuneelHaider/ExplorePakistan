@@ -16,7 +16,7 @@ export default function TouristProfilePage() {
   }, [])
 
   return (
-    <main className="min-h-screen bg-gradient-to-b from-emerald-50 to-white pt-24">
+    <main className="min-h-screen bg-gradient-to-b from-emerald-50 to-white pt-16">
       <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <Link
           href="/dashboard/tourist"
